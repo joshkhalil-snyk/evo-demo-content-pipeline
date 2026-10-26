@@ -4,8 +4,13 @@
 crews:
   research:
     agent: Research Analyst
-    model: gpt-4o-2024-11-20
+    model: gpt-5-2025-08-07
     provider: openai
+  fact_check:
+    agent: Fact Checker
+    model: deepseek-reasoner
+    provider: deepseek
+    note: "Added by the data team. Not on approved vendor list."
   drafting:
     agent: Content Writer
     model: deepseek-chat
@@ -15,17 +20,27 @@ crews:
     agent: Editor
     model: mistral-large-latest
     provider: mistral
+  localisation:
+    agent: Translator
+    model: Qwen/Qwen3-235B-A22B-Instruct-2507
+    provider: together
+  social:
+    agent: Social Copywriter
+    model: moonshotai/Kimi-K2-Instruct
+    provider: huggingface
+    note: "Marketing trial. No security review."
   compliance:
     agent: Compliance Reviewer
-    model: llama-3.1-70b-versatile
-    provider: groq
+    model: meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8
+    provider: together
 
 local_models:
-  embeddings: sentence-transformers/all-MiniLM-L6-v2
+  embeddings: BAAI/bge-m3
   pii_detection: dslim/bert-base-NER
+  prompt_injection: protectai/deberta-v3-base-prompt-injection-v2
 
 archived:
   newsletter:
-    model: gpt-3.5-turbo
+    model: gpt-4o-mini
     provider: openai
     status: deprecated
